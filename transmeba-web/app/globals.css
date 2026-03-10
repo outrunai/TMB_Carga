@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
