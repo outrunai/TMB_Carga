@@ -52,6 +52,17 @@ export interface WhyUsItem {
   iconName: string;
 }
 
+export interface AboutData {
+  id: number;
+  heading: string;
+  missionTitle: string;
+  missionText: string;
+  bascText: string;
+  ctaLabel: string;
+  ctaHref: string;
+  image: StrapiImage;
+}
+
 export interface FooterData {
   id: number;
   phone: string;
