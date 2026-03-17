@@ -9,7 +9,7 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
   const bgImage = heroData.backgroundImage.data;
 
   return (
-    <section className="relative h-[70vh] overflow-hidden md:h-screen">
+    <section className="relative min-h-screen overflow-hidden bg-primary">
       {/* Background Image */}
       {bgImage ? (
         <Image
@@ -17,7 +17,7 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
           alt={bgImage.attributes.alternativeText || "Hero background"}
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
       ) : (
@@ -25,7 +25,7 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
       )}
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/50" />
+      <div className="absolute inset-0 z-10 bg-primary/60 md:bg-black/50" />
 
       {/* Content */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 text-center">

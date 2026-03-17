@@ -21,7 +21,7 @@ export default function ClientsCarousel({ clients }: ClientsCarouselProps) {
         </h2>
 
         <div className="group overflow-hidden">
-          <div className="flex gap-12 animate-[scroll_30s_linear_infinite] group-hover:pause">
+          <div className="flex gap-12 animate-[scroll_15s_linear_infinite] md:animate-[scroll_30s_linear_infinite] group-hover:pause">
             {items.map((client, i) => (
               <div
                 key={`${client.id}-${i}`}
