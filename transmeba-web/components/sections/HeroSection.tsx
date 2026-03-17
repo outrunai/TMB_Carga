@@ -9,7 +9,7 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
   const bgImage = heroData.backgroundImage.data;
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[70vh] overflow-hidden md:h-screen">
       {/* Background Image */}
       {bgImage ? (
         <Image
@@ -18,6 +18,7 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
           fill
           priority
           className="object-cover"
+          sizes="100vw"
         />
       ) : (
         <div className="absolute inset-0 bg-primary" />
