@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import type { NavItem } from "@/lib/types";
+import { getWhatsappUrl } from "@/lib/whatsapp";
 
 const navItems: NavItem[] = [
   { id: 1, label: "Inicio", href: "/" },
@@ -17,21 +18,21 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const whatsappUrl = getWhatsappUrl();
 
   return (
     <header className="sticky top-0 z-50 bg-primary shadow-md">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/">
-          <div className="bg-white rounded px-2 py-1">
-            <Image
-              src="/images/logo.png"
-              alt="Transmeba Carga"
-              width={160}
-              height={48}
-              priority
-            />
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="Transmeba Carga"
+            width={160}
+            height={48}
+            priority
+            className="brightness-0 invert"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -49,12 +50,14 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <Link
-          href="/#contacto"
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-orange-600 text-white font-heading font-bold text-sm px-5 py-2.5 rounded-lg transition-colors"
         >
           Cotizar ahora
-        </Link>
+        </a>
 
         {/* Mobile hamburger */}
         <button
@@ -82,13 +85,15 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Link
-            href="/#contacto"
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="mt-4 block w-full text-center bg-accent hover:bg-orange-600 text-white font-heading font-bold text-sm px-5 py-2.5 rounded-lg transition-colors"
           >
             Cotizar ahora
-          </Link>
+          </a>
         </div>
       )}
     </header>

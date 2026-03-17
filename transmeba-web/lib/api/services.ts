@@ -9,7 +9,11 @@ const mockServicesData: ServiceItem[] = [
     description:
       "Servicio de transporte terrestre masivo y semi-masivo con flota propia de más de 50 vehículos para el manejo seguro y eficiente de grandes volúmenes de carga a nivel nacional.",
     iconName: "Truck",
-    href: "#servicios",
+    href: "/servicios/carga-masiva",
+    slug: "carga-masiva",
+    fullDescription:
+      "Realizamos transporte de carga masiva que contempla una entrega y semi–masiva que va de dos hasta cinco entregas por despacho en vehículos de diferente tipología teniendo en cuenta factores relacionados al peso & volumen de la carga a transportar.",
+    detailImages: ["/images/Semi-masiva-y-masiva-400x300.jpeg"],
     image: {
       data: {
         id: 1,
@@ -28,7 +32,11 @@ const mockServicesData: ServiceItem[] = [
     description:
       "Servicio especializado de desconsolidación en el depósito habilitado, optimizando tiempos y costos en la cadena logística de importación.",
     iconName: "Package",
-    href: "#servicios",
+    href: "/servicios/contenedores-itr",
+    slug: "contenedores-itr",
+    fullDescription:
+      "Servicio integral en retiro de contenedor en puerto a patio, traslado a área logística, clasificación e inspección física de mercancía, desconsolidación de carga y devolución de contenedor vacío de patio a puerto.",
+    detailImages: ["/images/transmebacarga2.jpg"],
     image: {
       data: {
         id: 2,
@@ -47,7 +55,11 @@ const mockServicesData: ServiceItem[] = [
     description:
       "Monitoreo permanente de la flota con tecnología GPS y central de control para garantizar la seguridad y trazabilidad de cada operación.",
     iconName: "Shield",
-    href: "#servicios",
+    href: "/servicios/control-vehicular",
+    slug: "control-vehicular",
+    fullDescription:
+      "Monitoreo privado de vehículos las 24 horas del día a través de Internet en tiempo real. Control de todas las operaciones de nuestros clientes enfocados en mantener la seguridad y mejorar la eficiencia.",
+    detailImages: ["/images/transmeba.png"],
     image: {
       data: {
         id: 3,
@@ -98,4 +110,9 @@ export async function getServices(): Promise<ServiceItem[]> {
   } catch {
     return mockServicesData;
   }
+}
+
+export async function getServiceBySlug(slug: string): Promise<ServiceItem | null> {
+  const services = await getServices();
+  return services.find((s) => s.slug === slug) ?? null;
 }

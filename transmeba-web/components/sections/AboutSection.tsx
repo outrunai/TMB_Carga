@@ -7,7 +7,7 @@ interface AboutSectionProps {
 }
 
 export default function AboutSection({ aboutData }: AboutSectionProps) {
-  const imageSrc = aboutData.image.data?.attributes?.url ?? "/images/transmeba.png";
+  const imageSrc = aboutData.image.data?.attributes?.url ?? "/images/transmebacarga2.jpg";
   const imageAlt =
     aboutData.image.data?.attributes?.alternativeText ?? "Transmeba transporte de carga";
 

@@ -16,7 +16,7 @@ const mockAboutData: AboutData = {
     data: {
       id: 1,
       attributes: {
-        url: "/images/transmeba.png",
+        url: "/images/transmebacarga2.jpg",
         alternativeText: "Transmeba - Transporte de carga terrestre",
         width: 800,
         height: 600,

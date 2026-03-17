@@ -4,12 +4,12 @@ import { getWhatsappUrl } from "@/lib/whatsapp";
 
 const fleetImages = [
   {
-    src: "/images/image_2021_06_11T23_19_09_859Z-235x300.jpg",
-    alt: "Flota Transmeba - Vehículos de carga",
+    src: "/images/Carga-masiva-y-semi-masiva.jpeg",
+    alt: "Flota Transmeba - Transporte de carga masiva",
   },
   {
-    src: "/images/image_2021_06_11T23_19_31_668Z-249x300.jpg",
-    alt: "Flota Transmeba - Transporte terrestre",
+    src: "/images/Contenedores.png",
+    alt: "Flota Transmeba - Contenedores y logística",
   },
 ];
 
@@ -30,17 +30,17 @@ export default function FleetSection() {
           puntualidad
         </p>
 
-        <div className="mb-12 grid gap-6 md:grid-cols-2">
+        <div className="mb-12 grid gap-8 md:grid-cols-2">
           {fleetImages.map((img) => (
             <div
               key={img.src}
-              className="relative h-72 overflow-hidden rounded-xl shadow-lg"
+              className="relative aspect-video overflow-hidden rounded-xl shadow-lg"
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           ))}

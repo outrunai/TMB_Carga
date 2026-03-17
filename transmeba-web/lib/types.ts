@@ -36,6 +36,9 @@ export interface ServiceItem {
   iconName: string;
   href: string;
   image: StrapiImage;
+  slug?: string;
+  fullDescription?: string;
+  detailImages?: string[];
 }
 
 export interface ClientLogo {

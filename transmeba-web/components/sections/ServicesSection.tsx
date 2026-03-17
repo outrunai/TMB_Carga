@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Truck, Package, Shield, Container, type LucideIcon } from "lucide-react";
 import { ServiceItem } from "@/lib/types";
 
@@ -37,12 +38,12 @@ function ServiceCard({ service }: { service: ServiceItem }) {
         <p className="mb-4 font-body text-sm leading-relaxed text-text-secondary">
           {service.description}
         </p>
-        <a
+        <Link
           href={service.href}
           className="font-heading text-sm font-bold text-accent hover:underline"
         >
           Saber más →
-        </a>
+        </Link>
       </div>
     </div>
   );

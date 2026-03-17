@@ -53,6 +53,8 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
           </a>
           <a
             href={heroData.secondaryCtaHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-lg bg-accent px-8 py-3 font-heading font-bold text-white transition-colors hover:bg-orange-600"
           >
             {heroData.secondaryCtaLabel}

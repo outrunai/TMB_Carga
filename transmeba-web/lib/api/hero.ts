@@ -1,4 +1,5 @@
 import { HeroData } from "@/lib/types";
+import { getWhatsappUrl } from "@/lib/whatsapp";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
@@ -11,12 +12,12 @@ const mockHeroData: HeroData = {
   primaryCtaLabel: "Nuestros Servicios",
   primaryCtaHref: "#servicios",
   secondaryCtaLabel: "Cotizar Ahora",
-  secondaryCtaHref: "#contacto",
+  secondaryCtaHref: "__WHATSAPP__",
   backgroundImage: {
     data: {
       id: 1,
       attributes: {
-        url: "/images/transmebacarga1.jpg",
+        url: "/images/Carga-masiva-y-semi-masiva.jpeg",
         alternativeText: "Flota de camiones Transmeba Carga",
         width: 1920,
         height: 1080,
@@ -56,6 +57,7 @@ export async function getHeroData(): Promise<HeroData> {
       backgroundImage,
     };
   } catch {
-    return mockHeroData;
+    const whatsappUrl = getWhatsappUrl();
+    return { ...mockHeroData, secondaryCtaHref: whatsappUrl };
   }
 }
